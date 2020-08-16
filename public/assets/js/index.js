@@ -4,6 +4,8 @@ const $saveNoteBtn = $(".save-note");
 const $newNoteBtn = $(".new-note");
 const $noteList = $(".list-container .list-group");
 
+
+
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
@@ -24,6 +26,8 @@ const saveNote = (note) => {
   });
 };
 
+// Delete research req.params
+// route will be api/notes/:id
 // A function for deleting a note from the db
 const deleteNote = (id) => {
   return $.ajax({
@@ -101,7 +105,7 @@ const handleRenderSaveBtn = function () {
   }
 };
 
-// Render's the list of note titles
+// Renders the list of note titles
 const renderNoteList = (notes) => {
   $noteList.empty();
 
@@ -149,3 +153,9 @@ $noteText.on("keyup", handleRenderSaveBtn);
 
 // Gets and renders the initial list of notes
 getAndRenderNotes();
+
+
+//A: Set up the port
+//B: Make sure that the Note API data contains title and the body of the note
+//C: Create a link from the note title that displays the body of the note
+//D: Program functionality that will allow users to edit and delete notes from the API
